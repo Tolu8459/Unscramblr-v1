@@ -1,4 +1,4 @@
-type WordItem = {
+export type WordItem = {
   word:string;
   clue:string;
 }

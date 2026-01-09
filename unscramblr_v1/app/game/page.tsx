@@ -6,11 +6,7 @@ import { WORDS } from "@/lib/words";
 import { scrambleWord } from "@/lib/scramble";
 import { shuffle } from "@/lib/shuffle";
 import { useRouter } from "next/navigation";
-
-type WordItem ={
-  word:string;
-  scrambled:string;
-};
+import type { WordItem } from "@/lib/words";
 
 export default function Game(){
 
