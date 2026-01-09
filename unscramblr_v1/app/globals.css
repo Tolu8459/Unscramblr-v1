@@ -1,8 +1,6 @@
-
-@import "@fontsource/sora/400.css";
-@import "@fontsource/sora/500.css";
-
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 
 
