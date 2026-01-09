@@ -1,7 +1,7 @@
 "use client";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { useState,useEffect } from "react"; 
+import React, { useState,useEffect } from "react"; 
 import { WORDS } from "@/lib/words";
 import { scrambleWord } from "@/lib/scramble";
 import { shuffle } from "@/lib/shuffle";
@@ -95,7 +95,7 @@ export default function Game(){
 
 
   const [answer,setAnswer] = useState("");
-  function typing(e){
+  function typing(e:React.ChangeEvent<HTMLInputElement>){
     setAnswer(e.target.value)
   };
 
