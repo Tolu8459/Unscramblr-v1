@@ -7,6 +7,11 @@ import { scrambleWord } from "@/lib/scramble";
 import { shuffle } from "@/lib/shuffle";
 import { useRouter } from "next/navigation";
 
+type WordItem ={
+  word:string;
+  scrambled:string:
+};
+
 export default function Game(){
 
   const searchParams = useSearchParams();
@@ -28,7 +33,7 @@ export default function Game(){
   const [scrambled,setScrambled] = useState("");
   const [clue,setClue] = useState("");
 
-  const [wordList,setWordList] = useState<string[]>([]);
+  const [wordList,setWordList] = useState<WordItem[]>([]);
  
   useEffect(()=>{
    const source = WORDS[difficultyLevel];
