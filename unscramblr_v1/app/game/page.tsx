@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 
 type WordItem ={
   word:string;
-  scrambled:string:
+  scrambled:string;
 };
 
 export default function Game(){
