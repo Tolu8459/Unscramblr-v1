@@ -28,7 +28,7 @@ export default function Game(){
   const [scrambled,setScrambled] = useState("");
   const [clue,setClue] = useState("");
 
-  const [wordList,setWordList] = useState([]);
+  const [wordList,setWordList] = useState<string[]>([]);
  
   useEffect(()=>{
    const source = WORDS[difficultyLevel];
