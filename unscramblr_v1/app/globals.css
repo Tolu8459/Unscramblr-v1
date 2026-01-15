@@ -43,6 +43,21 @@ body {
   }
 }
 
+@keyframes wiggle{
+  0% {transform: translate(0,0);}
+  50% {transform:translate(10px,-10px);}
+  100% {transform:translate(0,0);}
+}
+
+@keyframes drift {
+  0%   { transform: translate(0, 0); }
+  25%  { transform: translate(20vw, -15vh); }
+  50%  { transform: translate(-15vw, 20vh); }
+  75%  { transform: translate(10vw, 10vh); }
+  100% { transform: translate(0, 0); }
+}
+
+
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }

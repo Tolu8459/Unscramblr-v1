@@ -116,7 +116,7 @@ export default function Game(){
 
     setTimeout(()=>{
       setResult(null);
-    },500)
+    },700)
     
     
 
@@ -125,15 +125,12 @@ export default function Game(){
     return(
       
         <div className="min-h-screen w-ful bg-slate-950 bg-gradient-to-br from-indigo-950/40 via-slate-950 to-cyan-950/30 flex justify-center items-center px-4 text-white text-xl"> 
-        <div className=" absolute left-0 ml-4 perspective-[800px]">
-          <Link  href="/" className="top-30 self-start mt-8 mr-4 "> Main page </Link>
-          <Link href="/game/score"  className="top-30 self-start mt-8 mr-4">score page</Link>
-        </div>  
+        
           
           
           
 
-          <div   className="w-[80%]  bg-slate-900/80 backdrop-blur-lg shadow-[0_0_60px_rgba(99,102,241,0.25)]
+          <div   className="w-[95%]  bg-slate-900/80 backdrop-blur-lg shadow-[0_0_60px_rgba(99,102,241,0.25)]
           rounded-2xl p-6 border border-blue-800 max-h-screen  flex  items-center h-[90vh] py-4 mt-4 mb-4 flex-col relative">
 
             
@@ -170,7 +167,7 @@ export default function Game(){
                   
 
               <div className="flex flex-col lg:mt-32 mt-72 w-full px-4 ">
-            <input type="text" className=" h-12 border border-blue-900 rounded-2xl bg-[#12151c] " px-4 placeholder="your answer" id="answer" onChange={typing} value={answer}/>
+            <input type="text" className=" h-12 border border-blue-900 rounded-2xl bg-[#12151c] " placeholder="your answer" id="answer" onChange={typing} value={answer}/>
 
             <button id="SubmitBtn" onClick={checkAnswer} className="w-full h-12 bg-blue-400 mt-4 rounded-xl">Check</button>
             <button onClick={nextWord} className="w-full h-12 bg-blue-600 mt-4 rounded-xl ">next</button>

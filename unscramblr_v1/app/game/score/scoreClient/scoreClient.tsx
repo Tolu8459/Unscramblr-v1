@@ -7,28 +7,42 @@ export default function Score(){
     
 
     const searchParams = useSearchParams();
-    const score = searchParams.get("score");
+    
+    const scoreParam = searchParams.get("score");
+    const score = Number(scoreParam)
+    let feelGood = "";
 
-    const message = `i just scored ${score} in lexicon. Can you beat me? `
+    if (score >=1 && score <=5){
+        feelGood = "no excuses,try again"
+    }else if(score >=6 && score <=10){
+        feelGood = "you can do better"
+    } else if(score >=11 && score <=15){
+        feelGood = "good job"
+    } else if(score >=15 && score <=20){
+        feelGood = "Word master"
+    }
+
+    const message = `i just scored ${score} in lexicon. Can you beat me? play here 👉 Lexicon.vercel.app `
     const encodedMessage = encodeURI(message);
     const whatsappUrl = `https://wa.me/?text=${encodedMessage}`
     return(
         <div className="flex flex-col h-screen w-full items-center bg-[#0e1117] text-blue-500 justify-center">
-            <div className=" w-[70%] h-[90%] border-2 border-blue-600 rounded-xl flex flex-col items-center ">
-                <p className="font-semibold mt-32">Your Score:</p>
-                <p className="text-8xl font-bold text-red-600">20🎉{score}</p>
-
-                 <span className="w-full flex items-center justify-center ">
+            <div className=" w-[70%] h-[90%] border-2 border-blue-600 rounded-xl flex flex-col items-center mt-4 ">
+                <p className="font-semibold mt-32 text-4xl ml-4 ">Your Score:</p>
+                <p className="text-8xl font-bold text-red-600">{score}🎉</p>
+ 
+             
+               
+            </div>
+                <span className="w-full flex items-center justify-center mb-8 ml-8 mr-8">
                 <Link href="/" className=" flex mt-64 w-[10rem] h-10 border-2 
-                border-blue-600 items-center justify-center rounded-xl mr-16 py-6">Start new game </Link>
+                border-blue-600 items-center justify-center rounded-xl mr-16 py-6 px-4">Start new game </Link>
                 <button onClick={()=>window.open(whatsappUrl,"_blank")} className="bg-green-500 text-white  flex mt-64 w-[10rem] h-10 border-2 
                  items-center justify-center rounded-xl px-4 py-6"> 
                 <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" className="bi bi-whatsapp" viewBox="0 0 20 20">
                   <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
                 </svg> Share on whatsapp</button>
                 </span>
-               
-            </div>
         </div>
     )
 }

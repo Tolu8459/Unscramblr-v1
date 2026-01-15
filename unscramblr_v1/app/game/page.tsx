@@ -1,11 +1,16 @@
 import { Suspense } from "react";
 import Game from "./gameClient";
 
+
+
 export default function GamePage(){
   return(
-    <Suspense fallback={<div>Loading game...</div>}>
-      <Game/>
+    <div className="relative min-h-screen overflow-hidden ">
+     
+      <Suspense fallback={<div>Loading game...</div>}>
+        <Game/>
 
-    </Suspense>
+      </Suspense>
+    </div>
   );
 }
